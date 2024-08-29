@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TON Wallet</title>
+    <style>
+        /* Basic styling for the wallet interface */
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #wallet { padding: 20px; border: 1px solid #ccc; margin-top: 50px; display: inline-block; }
+        #balance { font-size: 24px; margin-bottom: 20px; }
+        button { padding: 10px 20px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div id="wallet">
+        <h1>TON Wallet</h1>
+        <div id="balance">Balance: 0 TON</div>
+        <button onclick="connectWallet()">Connect Wallet</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/tonweb"></script>
+    <script>
+        async function connectWallet() {
+            // Implement TON wallet connection using TON SDK or API
+            // For example:
+            const tonweb = new TonWeb();
+            // Connect to wallet and fetch balance...
+            const balance = await tonweb.wallet.getBalance();
+            document.getElementById('balance').innerText = 'Balance: ' + balance + ' TON';
+        }
+    </script>
+</body>
+</html>
