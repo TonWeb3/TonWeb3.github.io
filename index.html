@@ -30,9 +30,9 @@
             background-color: #006699;
         }
     </style>
-    <script src="https://unpkg.com/@tonconnect/sdk@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tonconnect/sdk@latest/dist/tonconnect-sdk.umd.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", async function() {
             // Request full-screen mode when the page loads
             function requestFullscreen() {
                 const docElm = document.documentElement;
@@ -48,36 +48,43 @@
             }
             requestFullscreen();
 
-            // TON Wallet Connection Logic
+            // TON Connect SDK initialization
+            const tonConnect = new TonConnect.TonConnect();
+
             const connectButton = document.getElementById('connect-button');
 
-            // Initialize TON Connect
-            const tonConnect = new TonConnect();
+            connectButton.addEventListener('click', async () => {
+                try {
+                    // Automatically detect and connect to available wallet
+                    const wallets = await tonConnect.getWallets();
+                    if (wallets.length > 0) {
+                        const wallet = wallets[0];  // Select the first available wallet
+                        const connection = await tonConnect.connect({
+                            jsBridgeKey: wallet.bridgeKey,
+                        });
 
-            // Check if the Telegram environment is available
+                        if (connection) {
+                            const walletAddress = connection.account.address;
+                            alert('Connected to TON Wallet: ' + walletAddress);
+                            console.log('Connected to TON Wallet: ', walletAddress);
+                        } else {
+                            console.log('Connection failed.');
+                        }
+                    } else {
+                        alert('No TON Wallet found. Please install a TON Wallet.');
+                    }
+                } catch (error) {
+                    console.error('Error connecting to TON Wallet:', error);
+                }
+            });
+
+            // Ensure the app is correctly expanded within Telegram WebApp
             if (window.Telegram && window.Telegram.WebApp) {
-                // Expand the web app to full screen in Telegram
                 const tg = window.Telegram.WebApp;
                 tg.expand();
             } else {
                 console.log("This is not running inside a Telegram WebApp.");
             }
-
-            connectButton.addEventListener('click', async () => {
-                try {
-                    // Start the connection process
-                    const walletConnection = await tonConnect.connect({
-                        jsBridgeKey: 'tonkeeper',  // or 'tonhub' depending on your wallet
-                    });
-                    
-                    // If successful, get and log the wallet address
-                    const walletAddress = walletConnection.account.address;
-                    alert('Connected to TON Wallet: ' + walletAddress);
-                    console.log('Connected to TON Wallet: ', walletAddress);
-                } catch (error) {
-                    console.error('Error connecting to TON Wallet:', error);
-                }
-            });
         });
     </script>
 </head>
