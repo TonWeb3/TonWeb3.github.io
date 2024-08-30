@@ -33,7 +33,31 @@
     <script src="https://cdn.jsdelivr.net/npm/@tonconnect/sdk@latest/dist/tonconnect-sdk.umd.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", async function() {
-            // Request full-screen mode when the page loads
+            // TON Connect SDK initialization
+            const tonConnect = new TonConnect.TonConnect();
+
+            const connectButton = document.getElementById('connect-button');
+
+            connectButton.addEventListener('click', async () => {
+                try {
+                    // Start the connection process using TonConnect
+                    const walletInfo = await tonConnect.connectWallet({
+                        jsBridgeKey: 'tonkeeper', // or use 'tonhub', 'tonwallet', etc.
+                    });
+
+                    if (walletInfo) {
+                        const walletAddress = walletInfo.account.address;
+                        alert('Connected to TON Wallet: ' + walletAddress);
+                        console.log('Connected to TON Wallet: ', walletAddress);
+                    } else {
+                        console.log('Connection was canceled or failed.');
+                    }
+                } catch (error) {
+                    console.error('Error connecting to TON Wallet:', error);
+                }
+            });
+
+            // Full-screen request on user interaction
             function requestFullscreen() {
                 const docElm = document.documentElement;
                 if (docElm.requestFullscreen) {
@@ -46,42 +70,16 @@
                     docElm.msRequestFullscreen();
                 }
             }
-            requestFullscreen();
 
-            // TON Connect SDK initialization
-            const tonConnect = new TonConnect.TonConnect();
-
-            const connectButton = document.getElementById('connect-button');
-
-            connectButton.addEventListener('click', async () => {
-                try {
-                    // Automatically detect and connect to available wallet
-                    const wallets = await tonConnect.getWallets();
-                    if (wallets.length > 0) {
-                        const wallet = wallets[0];  // Select the first available wallet
-                        const connection = await tonConnect.connect({
-                            jsBridgeKey: wallet.bridgeKey,
-                        });
-
-                        if (connection) {
-                            const walletAddress = connection.account.address;
-                            alert('Connected to TON Wallet: ' + walletAddress);
-                            console.log('Connected to TON Wallet: ', walletAddress);
-                        } else {
-                            console.log('Connection failed.');
-                        }
-                    } else {
-                        alert('No TON Wallet found. Please install a TON Wallet.');
-                    }
-                } catch (error) {
-                    console.error('Error connecting to TON Wallet:', error);
-                }
-            });
-
-            // Ensure the app is correctly expanded within Telegram WebApp
+            // Check if running inside Telegram WebApp
             if (window.Telegram && window.Telegram.WebApp) {
                 const tg = window.Telegram.WebApp;
                 tg.expand();
+
+                // Request full screen after Telegram WebApp is expanded
+                tg.on('expand', () => {
+                    setTimeout(requestFullscreen, 1000); // Delay to ensure expand has completed
+                });
             } else {
                 console.log("This is not running inside a Telegram WebApp.");
             }
