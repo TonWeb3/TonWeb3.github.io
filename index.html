@@ -3,32 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TON Wallet</title>
+    <title>Telegram Wallet Integration</title>
     <style>
-        /* Basic styling for the wallet interface */
-        body { font-family: Arial, sans-serif; text-align: center; }
-        #wallet { padding: 20px; border: 1px solid #ccc; margin-top: 50px; display: inline-block; }
-        #balance { font-size: 24px; margin-bottom: 20px; }
-        button { padding: 10px 20px; font-size: 16px; }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        #connect-button {
+            padding: 15px 30px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #0088cc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        #connect-button:hover {
+            background-color: #006699;
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Request full-screen mode when the page loads
+            function requestFullscreen() {
+                const docElm = document.documentElement;
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                } else if (docElm.mozRequestFullScreen) { // Firefox
+                    docElm.mozRequestFullScreen();
+                } else if (docElm.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                    docElm.webkitRequestFullscreen();
+                } else if (docElm.msRequestFullscreen) { // IE/Edge
+                    docElm.msRequestFullscreen();
+                }
+            }
+            requestFullscreen();
+
+            // Telegram Web App integration
+            const tg = window.Telegram.WebApp;
+            tg.expand();  // Request full screen within Telegram
+
+            document.getElementById('connect-button').addEventListener('click', function() {
+                // Placeholder function to connect to Telegram wallet
+                // You would integrate your specific wallet connection code here
+                alert('Connecting to Telegram Wallet...');
+                // Example of accessing Telegram user data
+                console.log('User ID: ', tg.initDataUnsafe.user.id);
+                console.log('Username: ', tg.initDataUnsafe.user.username);
+            });
+        });
+    </script>
 </head>
 <body>
-    <div id="wallet">
-        <h1>TON Wallet</h1>
-        <div id="balance">Balance: 0 TON</div>
-        <button onclick="connectWallet()">Connect Wallet</button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/tonweb"></script>
-    <script>
-        async function connectWallet() {
-            // Implement TON wallet connection using TON SDK or API
-            // For example:
-            const tonweb = new TonWeb();
-            // Connect to wallet and fetch balance...
-            const balance = await tonweb.wallet.getBalance();
-            document.getElementById('balance').innerText = 'Balance: ' + balance + ' TON';
-        }
-    </script>
+    <button id="connect-button">Connect to Telegram Wallet</button>
 </body>
 </html>
