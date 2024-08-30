@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Telegram Wallet Integration</title>
+    <title>TON Wallet Integration</title>
     <style>
         body, html {
             margin: 0;
@@ -30,6 +30,7 @@
             background-color: #006699;
         }
     </style>
+    <script src="https://unpkg.com/@tonconnect/sdk@latest"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Request full-screen mode when the page loads
@@ -47,22 +48,40 @@
             }
             requestFullscreen();
 
-            // Telegram Web App integration
-            const tg = window.Telegram.WebApp;
-            tg.expand();  // Request full screen within Telegram
+            // TON Wallet Connection Logic
+            const connectButton = document.getElementById('connect-button');
 
-            document.getElementById('connect-button').addEventListener('click', function() {
-                // Placeholder function to connect to Telegram wallet
-                // You would integrate your specific wallet connection code here
-                alert('Connecting to Telegram Wallet...');
-                // Example of accessing Telegram user data
-                console.log('User ID: ', tg.initDataUnsafe.user.id);
-                console.log('Username: ', tg.initDataUnsafe.user.username);
+            // Initialize TON Connect
+            const tonConnect = new TonConnect();
+
+            // Check if the Telegram environment is available
+            if (window.Telegram && window.Telegram.WebApp) {
+                // Expand the web app to full screen in Telegram
+                const tg = window.Telegram.WebApp;
+                tg.expand();
+            } else {
+                console.log("This is not running inside a Telegram WebApp.");
+            }
+
+            connectButton.addEventListener('click', async () => {
+                try {
+                    // Start the connection process
+                    const walletConnection = await tonConnect.connect({
+                        jsBridgeKey: 'tonkeeper',  // or 'tonhub' depending on your wallet
+                    });
+                    
+                    // If successful, get and log the wallet address
+                    const walletAddress = walletConnection.account.address;
+                    alert('Connected to TON Wallet: ' + walletAddress);
+                    console.log('Connected to TON Wallet: ', walletAddress);
+                } catch (error) {
+                    console.error('Error connecting to TON Wallet:', error);
+                }
             });
         });
     </script>
 </head>
 <body>
-    <button id="connect-button">Connect to Telegram Wallet</button>
+    <button id="connect-button">Connect to TON Wallet</button>
 </body>
 </html>
