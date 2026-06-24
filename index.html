@@ -8,22 +8,26 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ============================================================
-   MÈCHE — Hair Atelier
-   Espresso · champagne · rosé. Signature: flowing hair w/ light-sweep shine
-   ============================================================ */
 
+
+
+
+
+
+
+
+   
 :root{
-  --ink:        #17110F;   /* espresso base */
-  --ink-2:      #1F1814;   /* raised panel  */
-  --ink-3:      #2A211B;   /* hairline / borders */
-  --taupe:      #E7DBCB;   /* warm light section */
+  --ink:        #17110F;
+  --ink-2:      #1F1814;
+  --ink-3:      #2A211B;
+  --taupe:      #E7DBCB;
   --taupe-2:    #DCCDB9;
-  --cream:      #EFE6DA;   /* light text on dark */
-  --muted:      #A2917F;   /* muted text */
-  --champagne:  #D8B98C;   /* primary metallic accent */
-  --gold-hi:    #F3DEAE;   /* bright highlight */
-  --rose:       #C98B83;   /* secondary accent */
+  --cream:      #EFE6DA;
+  --muted:      #A2917F;
+  --champagne:  #D8B98C;
+  --gold-hi:    #F3DEAE;
+  --rose:       #C98B83;
   --rose-deep:  #A86A66;
 
   --serif: "Cormorant Garamond", Georgia, serif;
@@ -33,6 +37,14 @@
   --ease: cubic-bezier(.22,.61,.36,1);
 }
 
+
+
+
+
+
+
+
+   
 *,*::before,*::after{ box-sizing:border-box; }
 html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
 body{
@@ -46,13 +58,15 @@ body{
   overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
+
+
+   
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
 button{ font-family:inherit; cursor:pointer; }
 
 ::selection{ background:var(--champagne); color:var(--ink); }
 
-/* ---------- shared type helpers ---------- */
 .eyebrow{
   font-size:.72rem; letter-spacing:.42em; text-transform:uppercase;
   color:var(--champagne); font-weight:500; margin:0 0 1.4rem;
@@ -69,10 +83,14 @@ h2.section-title{ font-size:clamp(2.1rem, 5vw, 3.6rem); }
 .gold{ color:var(--champagne); }
 em.serif{ font-style:italic; }
 
+
+
+
+
+   
 .container{ width:100%; max-width:var(--maxw); margin:0 auto; padding:0 clamp(1.4rem,5vw,3.5rem); }
 .section{ padding:clamp(4.5rem,11vw,9rem) 0; position:relative; }
 
-/* ---------- buttons ---------- */
 .btn{
   position:relative; display:inline-flex; align-items:center; gap:.7rem;
   font-family:var(--sans); font-size:.74rem; letter-spacing:.28em; text-transform:uppercase;
@@ -94,6 +112,11 @@ em.serif{ font-style:italic; }
   content:""; position:absolute; inset:0; z-index:1; background:var(--champagne);
   transform:scaleY(0); transform-origin:bottom; transition:transform .5s var(--ease);
 }
+
+
+
+
+   
 .btn-ghost:hover{ color:var(--ink); border-color:var(--champagne); }
 .btn-ghost:hover::before{ transform:scaleY(1); }
 .btn-dark{ background:var(--ink); color:var(--cream); }
@@ -103,9 +126,6 @@ em.serif{ font-style:italic; }
 
 :focus-visible{ outline:2px solid var(--gold-hi); outline-offset:3px; }
 
-/* ============================================================
-   HEADER / NAV
-   ============================================================ */
 header{
   position:fixed; top:0; left:0; right:0; z-index:100;
   padding:1.5rem 0; transition:padding .5s var(--ease), background .5s var(--ease), backdrop-filter .5s var(--ease);
@@ -136,22 +156,15 @@ header.scrolled{
 .hamburger.open span:nth-child(2){ opacity:0; }
 .hamburger.open span:nth-child(3){ transform:translateY(-7.5px) rotate(-45deg); }
 
-/* ============================================================
-   PAGE SYSTEM
-   ============================================================ */
 .page{ display:none; }
 .page.active{ display:block; animation:pageIn .8s var(--ease) both; }
 @keyframes pageIn{ from{ opacity:0; transform:translateY(14px); } to{ opacity:1; transform:none; } }
 
-/* sub-page hero (non-home) */
 .subhero{ padding:clamp(9rem,16vw,13rem) 0 clamp(3.5rem,7vw,6rem); text-align:center; position:relative; overflow:hidden; }
 .subhero .container{ position:relative; z-index:2; }
 .subhero h1{ font-size:clamp(2.8rem,7vw,5.2rem); font-weight:300; }
 .subhero p{ max-width:560px; margin:1.6rem auto 0; color:var(--muted); }
 
-/* ============================================================
-   FLOWING HAIR SVG + SHINE  (the signature)
-   ============================================================ */
 .hair-field{ position:absolute; inset:0; z-index:0; pointer-events:none; overflow:hidden; }
 .hair-field svg{ position:absolute; height:130%; top:-15%; }
 .strand{ fill:none; stroke-width:1.4; opacity:.55; transform-box:fill-box; transform-origin:top center; animation:sway 11s ease-in-out infinite; }
@@ -159,7 +172,13 @@ header.scrolled{
   0%,100%{ transform:translateX(0) rotate(0deg); }
   50%{ transform:translateX(10px) rotate(.6deg); }
 }
-/* shine band sweeping down the strands */
+
+
+
+
+
+
+   
 .shine{
   position:absolute; left:-20%; right:-20%; height:42%; top:-50%; z-index:1; pointer-events:none;
   background:linear-gradient(180deg, transparent, rgba(243,222,174,.16) 45%, rgba(243,222,174,.30) 50%, rgba(243,222,174,.16) 55%, transparent);
@@ -172,9 +191,6 @@ header.scrolled{
   100%{ transform:translateY(330%); opacity:0; }
 }
 
-/* ============================================================
-   HOME — HERO
-   ============================================================ */
 .hero{ position:relative; min-height:100vh; display:flex; align-items:center; overflow:hidden; }
 .hero-bg{ position:absolute; inset:0; z-index:0;
   background:
@@ -182,6 +198,12 @@ header.scrolled{
     radial-gradient(90% 70% at 18% 88%, rgba(216,185,140,.12), transparent 60%),
     var(--ink);
 }
+
+
+
+
+
+   
 .hero .container{ position:relative; z-index:3; }
 .hero-grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:3rem; align-items:center; }
 .hero-copy{ max-width:640px; }
@@ -197,7 +219,6 @@ header.scrolled{
 
 .hero-eyebrow{ opacity:0; animation:fadeUp .9s var(--ease) .35s forwards; }
 
-/* hero visual card (right) */
 .hero-card{ position:relative; opacity:0; animation:fadeUp 1.1s var(--ease) .5s forwards; }
 .hero-portrait{
   position:relative; aspect-ratio:3/4; border-radius:3px; overflow:hidden;
@@ -231,7 +252,6 @@ header.scrolled{
 .scroll-hint .ln::after{ content:""; position:absolute; top:0; left:0; width:100%; height:40%; background:var(--gold-hi); animation:drip 2.2s var(--ease) infinite; }
 @keyframes drip{ 0%{ transform:translateY(-100%); } 100%{ transform:translateY(260%); } }
 
-/* ---------- marquee ethos ---------- */
 .marquee{ border-block:1px solid var(--ink-3); padding:1.5rem 0; overflow:hidden; background:var(--ink-2); }
 .marquee-track{ display:flex; gap:3.5rem; width:max-content; animation:scrollX 32s linear infinite; }
 .marquee:hover .marquee-track{ animation-play-state:paused; }
@@ -239,12 +259,10 @@ header.scrolled{
 .marquee span::after{ content:"✦"; color:var(--champagne); font-style:normal; font-size:.8rem; }
 @keyframes scrollX{ to{ transform:translateX(-50%); } }
 
-/* ---------- reveal util ---------- */
 .reveal{ opacity:0; transform:translateY(34px); transition:opacity 1s var(--ease), transform 1s var(--ease); }
 .reveal.in{ opacity:1; transform:none; }
 .reveal.d1{ transition-delay:.1s; } .reveal.d2{ transition-delay:.2s; } .reveal.d3{ transition-delay:.3s; } .reveal.d4{ transition-delay:.4s; }
 
-/* ---------- intro split ---------- */
 .split{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(2.5rem,6vw,6rem); align-items:center; }
 .split-media{ position:relative; aspect-ratio:4/5; border-radius:3px; overflow:hidden; border:1px solid var(--ink-3); }
 .split-media.alt{ aspect-ratio:1/1; }
@@ -253,13 +271,19 @@ header.scrolled{
 .stat b{ font-family:var(--serif); font-size:2.6rem; color:var(--champagne); display:block; line-height:1; }
 .stat small{ font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
 
-/* ---------- service preview cards ---------- */
 .cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.2rem; }
 .card{
   position:relative; padding:2.4rem 1.8rem 2rem; border:1px solid var(--ink-3); border-radius:3px;
   background:linear-gradient(180deg,var(--ink-2),var(--ink)); overflow:hidden;
   transition:transform .6s var(--ease), border-color .6s var(--ease);
 }
+
+
+
+
+
+
+   
 .card::before{ content:""; position:absolute; left:0; right:0; top:0; height:2px; background:linear-gradient(90deg,var(--champagne),var(--rose)); transform:scaleX(0); transform-origin:left; transition:transform .6s var(--ease); }
 .card:hover{ transform:translateY(-8px); border-color:rgba(216,185,140,.4); }
 .card:hover::before{ transform:scaleX(1); }
@@ -271,7 +295,6 @@ header.scrolled{
 .card .scissor{ position:absolute; right:1.6rem; top:1.8rem; opacity:.25; transition:opacity .5s, transform .6s var(--ease); }
 .card:hover .scissor{ opacity:.7; transform:rotate(-12deg); }
 
-/* ---------- ritual (3-step, real sequence) ---------- */
 .ritual{ background:var(--ink-2); }
 .ritual-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--ink-3); border:1px solid var(--ink-3); border-radius:3px; overflow:hidden; }
 .ritual-step{ background:var(--ink); padding:clamp(2rem,4vw,3.4rem) clamp(1.6rem,3vw,2.6rem); transition:background .5s; }
@@ -281,7 +304,6 @@ header.scrolled{
 .ritual-step h3{ font-size:1.5rem; margin:1.2rem 0 .7rem; }
 .ritual-step p{ color:var(--muted); font-size:.92rem; margin:0; }
 
-/* ---------- testimonial ---------- */
 .quote-wrap{ text-align:center; max-width:880px; margin:0 auto; }
 .quote-wrap .mark{ font-family:var(--serif); font-size:6rem; color:var(--champagne); line-height:.4; opacity:.5; }
 .quote-wrap blockquote{ font-family:var(--serif); font-size:clamp(1.6rem,3.4vw,2.7rem); font-weight:300; font-style:italic; line-height:1.3; margin:1.5rem 0 2rem; }
@@ -291,14 +313,10 @@ header.scrolled{
 .dots button{ width:8px; height:8px; border-radius:50%; border:1px solid var(--champagne); background:transparent; padding:0; transition:background .4s, transform .4s; }
 .dots button.on{ background:var(--champagne); transform:scale(1.25); }
 
-/* ---------- CTA band ---------- */
 .cta-band{ position:relative; overflow:hidden; background:linear-gradient(135deg,#241a14,#17110f); border-block:1px solid var(--ink-3); text-align:center; }
 .cta-band h2{ font-size:clamp(2.2rem,6vw,4.4rem); font-weight:300; }
 .cta-band p{ color:var(--muted); max-width:480px; margin:1.4rem auto 2.4rem; }
 
-/* ============================================================
-   SERVICES — menu
-   ============================================================ */
 .menu-group{ margin-bottom:clamp(3rem,6vw,5rem); }
 .menu-head{ display:flex; align-items:baseline; gap:1.4rem; margin-bottom:2.2rem; }
 .menu-head h2{ font-size:clamp(1.8rem,4vw,2.8rem); white-space:nowrap; }
@@ -308,6 +326,8 @@ header.scrolled{
   display:grid; grid-template-columns:1fr auto; gap:.4rem 1.5rem; align-items:baseline;
   padding:1.3rem 0; border-bottom:1px solid var(--ink-3); transition:padding-left .4s var(--ease);
 }
+
+   
 .menu-item:hover{ padding-left:.8rem; }
 .menu-item .mi-name{ font-family:var(--serif); font-size:1.4rem; color:var(--cream); }
 .menu-item .mi-desc{ grid-column:1/2; color:var(--muted); font-size:.88rem; margin-top:.2rem; max-width:560px; }
@@ -315,15 +335,16 @@ header.scrolled{
 .menu-item .mi-price{ grid-row:1/2; grid-column:2/3; font-family:var(--serif); font-size:1.5rem; color:var(--champagne); white-space:nowrap; }
 .note{ font-size:.82rem; color:var(--muted); font-style:italic; font-family:var(--serif); }
 
-/* ============================================================
-   LOOKBOOK — gallery
-   ============================================================ */
 .filters{ display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; margin-bottom:3rem; }
 .filters button{
   background:transparent; border:1px solid var(--ink-3); color:var(--muted);
   font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; padding:.7rem 1.4rem; border-radius:2px;
   transition:color .4s, border-color .4s, background .4s;
 }
+
+
+
+   
 .filters button:hover{ color:var(--cream); border-color:var(--champagne); }
 .filters button.on{ background:var(--champagne); color:var(--ink); border-color:var(--champagne); }
 .lookgrid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
@@ -340,15 +361,15 @@ header.scrolled{
   background:linear-gradient(transparent,rgba(15,11,9,.88)); transform:translateY(18px); opacity:0;
   transition:transform .5s var(--ease), opacity .5s;
 }
+
+
+   
 .look:hover .lk-info{ transform:none; opacity:1; }
 .look .lk-info h3{ font-size:1.5rem; }
 .look .lk-info span{ font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--champagne); }
 .look .lk-cat{ position:absolute; top:1.1rem; left:1.1rem; z-index:3; font-size:.6rem; letter-spacing:.22em; text-transform:uppercase; color:var(--cream); background:rgba(20,15,13,.55); backdrop-filter:blur(4px); padding:.45rem .8rem; border-radius:2px; }
 .look.hide{ display:none; }
 
-/* ============================================================
-   ATELIER — about + team
-   ============================================================ */
 .values{ display:grid; grid-template-columns:repeat(3,1fr); gap:1.2rem; }
 .value{ padding:2.4rem 2rem; border:1px solid var(--ink-3); border-radius:3px; transition:transform .5s var(--ease); }
 .value:hover{ transform:translateY(-6px); }
@@ -362,15 +383,14 @@ header.scrolled{
   position:relative; aspect-ratio:1/1; border-radius:50%; overflow:hidden; margin-bottom:1.4rem;
   border:1px solid rgba(216,185,140,.3); display:flex; align-items:center; justify-content:center;
 }
+
+   
 .stylist .avatar .mono{ font-family:var(--serif); font-size:3rem; color:var(--cream); z-index:1; transition:transform .6s var(--ease); }
 .stylist:hover .avatar .mono{ transform:scale(1.08); }
 .stylist h3{ font-size:1.5rem; }
 .stylist .role{ font-size:.66rem; letter-spacing:.2em; text-transform:uppercase; color:var(--champagne); margin:.5rem 0 .8rem; }
 .stylist p{ font-size:.85rem; color:var(--muted); margin:0; }
 
-/* ============================================================
-   VISIT — booking + contact
-   ============================================================ */
 .visit-grid{ display:grid; grid-template-columns:1.05fr .95fr; gap:clamp(2.5rem,6vw,5rem); align-items:start; }
 .form-card{ background:var(--ink-2); border:1px solid var(--ink-3); border-radius:4px; padding:clamp(1.8rem,4vw,3rem); }
 .field{ margin-bottom:1.5rem; }
@@ -403,9 +423,6 @@ header.scrolled{
 @keyframes ping{ 0%{ transform:scale(.4); opacity:.8; } 100%{ transform:scale(1.6); opacity:0; } }
 .mapfaux .dot2{ width:12px; height:12px; border-radius:50%; background:var(--gold-hi); box-shadow:0 0 18px var(--champagne); }
 
-/* ============================================================
-   FOOTER
-   ============================================================ */
 footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clamp(3.5rem,7vw,5.5rem) 0 2rem; }
 .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.3fr; gap:2.5rem; margin-bottom:3.5rem; }
 .foot-col h4{ font-size:.66rem; letter-spacing:.22em; text-transform:uppercase; color:var(--champagne); margin:0 0 1.3rem; font-family:var(--sans); font-weight:500; }
@@ -425,9 +442,6 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
 .socials a{ width:34px; height:34px; border:1px solid var(--ink-3); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--muted); transition:color .4s, border-color .4s, transform .4s; }
 .socials a:hover{ color:var(--champagne); border-color:var(--champagne); transform:translateY(-3px); }
 
-/* ============================================================
-   PHOTOGRAPHY  — real images layered over SVG fallback
-   ============================================================ */
 .media-img{
   position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 28%;
   z-index:2; opacity:0; transform:scale(1.04);
@@ -435,13 +449,16 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   filter:saturate(.9) contrast(1.03) brightness(.94);
 }
 .media-img.loaded{ opacity:1; transform:scale(1); }
-/* warm tint binds photos to the espresso/champagne palette */
+
 .media-tint{
   position:absolute; inset:0; z-index:3; pointer-events:none;
   background:
     linear-gradient(180deg, rgba(23,17,15,.10), rgba(23,17,15,.34)),
     linear-gradient(120deg, rgba(216,185,140,.10), transparent 55%, rgba(201,139,131,.12));
 }
+
+
+   
 .split-media:hover .media-img, .hero-portrait:hover .media-img{ filter:saturate(1) contrast(1.04) brightness(1); transform:scale(1.06); }
 .look .media-img{ object-position:center 22%; }
 .look:hover .media-img{ transform:scale(1.07); }
@@ -450,11 +467,7 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
 .stylist .avatar .media-tint{ background:linear-gradient(160deg, rgba(216,185,140,.10), rgba(23,17,15,.18)); }
 .hero-portrait .media-img{ object-position:center 25%; }
 
-/* ============================================================
-   RESPONSIVE  —  desktop ▸ laptop ▸ tablet ▸ mobile
-   ============================================================ */
-
-/* Laptop / small desktop */
+   
 @media (max-width:1080px){
   .cards{ grid-template-columns:repeat(2,1fr); }
   .team-grid{ grid-template-columns:repeat(2,1fr); }
@@ -464,7 +477,8 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   .hero-grid{ gap:2rem; }
 }
 
-/* Tablet */
+
+   
 @media (max-width:900px){
   .nav-links, .nav-cta .btn{ display:none; }
   .hamburger{ display:flex; }
@@ -473,10 +487,12 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     background:rgba(18,13,11,.97); backdrop-filter:blur(20px); transform:translateX(100%);
     transition:transform .55s var(--ease); display:flex;
   }
+
+
+   
   .nav-links.open{ transform:none; }
   .nav-links a{ font-size:1.1rem; opacity:1; }
 
-  /* hero reflows to a single centered column — image stays, sits above copy */
   .hero{ min-height:auto; padding:9rem 0 4.5rem; }
   .hero-grid{ grid-template-columns:1fr; gap:2.6rem; }
   .hero-card{ display:block; order:-1; max-width:340px; margin:0 auto; width:100%; }
@@ -490,7 +506,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   .visit-grid .form-card{ order:-1; }
 }
 
-/* Large phone */
+
+
+
+   
 @media (max-width:640px){
   .cards, .team-grid, .lookgrid{ grid-template-columns:1fr; }
   .stat-row{ flex-wrap:wrap; gap:1.4rem 2.5rem; }
@@ -501,14 +520,15 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   .hero-actions{ width:100%; }
   .hero-actions .btn{ flex:1; justify-content:center; }
   .marquee span{ font-size:1.2rem; }
-  /* touch devices have no hover — keep look captions visible */
+
   .look .lk-info{ transform:none; opacity:1; }
   .menu-head h2{ white-space:normal; }
   .lookgrid{ gap:1rem; }
   .look, .look.tall{ aspect-ratio:4/5; }
 }
 
-/* Small phone */
+
+   
 @media (max-width:380px){
   .display{ font-size:2.5rem; }
   .btn{ padding:1rem 1.5rem; letter-spacing:.18em; }
@@ -521,11 +541,17 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   .hero h1 .line > span{ transform:none; }
   .media-img{ opacity:1; transform:none; }
 }
+
+
+
+
+
+
+   
 </style>
 </head>
 <body>
 
-<!-- ===================== HEADER ===================== -->
 <header id="header">
   <div class="container nav-inner">
     <a href="#" class="logo" data-nav="home"><b>MÈCHE</b><i>atelier</i></a>
@@ -547,12 +573,12 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
 
 <main>
 
-<!-- ===================================================================
-     PAGE: HOME
-     =================================================================== -->
+
+
+
+   
 <section class="page active" id="page-home">
 
-  <!-- HERO -->
   <div class="hero">
     <div class="hero-bg"></div>
     <div class="hair-field" id="heroHair"></div>
@@ -586,7 +612,6 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     <div class="scroll-hint"><span>Scroll</span><span class="ln"></span></div>
   </div>
 
-  <!-- MARQUEE ETHOS -->
   <div class="marquee">
     <div class="marquee-track">
       <span>Precision Cutting</span><span>Lived-in Colour</span><span>Balayage</span><span>Gloss &amp; Shine</span><span>Bridal &amp; Occasion</span><span>Restorative Care</span>
@@ -594,7 +619,6 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- INTRO SPLIT -->
   <div class="section">
     <div class="container split">
       <div class="reveal">
@@ -614,7 +638,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- SERVICE PREVIEW -->
+
+
+   
   <div class="section" style="padding-top:0;">
     <div class="container">
       <div style="text-align:center; margin-bottom:3.5rem;" class="reveal">
@@ -657,7 +683,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- RITUAL (real 3-step sequence → numbered markers justified) -->
+
+
+
+   
   <div class="section ritual">
     <div class="container">
       <div style="margin-bottom:3rem;" class="reveal">
@@ -684,7 +713,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- TESTIMONIAL -->
+
+
+
+   
   <div class="section">
     <div class="container">
       <div class="quote-wrap reveal">
@@ -696,7 +728,6 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- CTA BAND -->
   <div class="section cta-band">
     <div class="hair-field" id="ctaHair"></div>
     <div class="container" style="position:relative; z-index:3;">
@@ -710,9 +741,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   </div>
 </section>
 
-<!-- ===================================================================
-     PAGE: SERVICES
-     =================================================================== -->
+
+
+
+   
 <section class="page" id="page-services">
   <div class="subhero">
     <div class="hair-field" id="svcHair"></div>
@@ -723,6 +755,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
+
+
+
+   
   <div class="section" style="padding-top:0;">
     <div class="container">
 
@@ -754,6 +790,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
         </div>
       </div>
 
+
+
+
+       
       <div class="menu-group reveal">
         <div class="menu-head"><span class="ix">II</span><h2>Colour</h2><span class="rule"></span></div>
         <div class="menu-item">
@@ -782,6 +822,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
         </div>
       </div>
 
+
+
+
+       
       <div class="menu-group reveal">
         <div class="menu-head"><span class="ix">III</span><h2>Treatments &amp; Care</h2><span class="rule"></span></div>
         <div class="menu-item">
@@ -804,6 +848,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
         </div>
       </div>
 
+
+
+
+       
       <div class="menu-group reveal">
         <div class="menu-head"><span class="ix">IV</span><h2>Occasion</h2><span class="rule"></span></div>
         <div class="menu-item">
@@ -835,9 +883,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   </div>
 </section>
 
-<!-- ===================================================================
-     PAGE: LOOKBOOK
-     =================================================================== -->
+
+
+   
 <section class="page" id="page-lookbook">
   <div class="subhero">
     <div class="hair-field" id="lookHair"></div>
@@ -848,6 +896,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
+
+
+   
   <div class="section" style="padding-top:0;">
     <div class="container">
       <div class="filters" id="lookFilters">
@@ -857,11 +908,14 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
         <button data-filter="occasion">Occasion</button>
       </div>
       <div class="lookgrid" id="lookGrid">
-        <!-- looks injected by JS -->
+
       </div>
     </div>
   </div>
 
+
+
+   
   <div class="section cta-band" style="padding-block:clamp(3.5rem,8vw,6rem);">
     <div class="container reveal" style="text-align:center;">
       <h2>See one you love?</h2>
@@ -871,9 +925,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   </div>
 </section>
 
-<!-- ===================================================================
-     PAGE: ATELIER (about)
-     =================================================================== -->
+
+
+   
 <section class="page" id="page-atelier">
   <div class="subhero">
     <div class="hair-field" id="atelierHair"></div>
@@ -884,6 +938,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
+
+
+   
   <div class="section" style="padding-top:0;">
     <div class="container split">
       <div class="reveal">
@@ -899,7 +956,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- VALUES -->
+
+
+   
   <div class="section ritual" style="padding-top:clamp(3rem,7vw,6rem);">
     <div class="container">
       <div style="margin-bottom:3rem;" class="reveal">
@@ -914,7 +973,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
-  <!-- TEAM -->
+
+
+   
   <div class="section">
     <div class="container">
       <div style="text-align:center; margin-bottom:3.5rem;" class="reveal">
@@ -951,9 +1012,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   </div>
 </section>
 
-<!-- ===================================================================
-     PAGE: VISIT (contact + booking)
-     =================================================================== -->
+
+
+   
 <section class="page" id="page-visit">
   <div class="subhero">
     <div class="hair-field" id="visitHair"></div>
@@ -964,10 +1025,12 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
     </div>
   </div>
 
+   
   <div class="section" style="padding-top:0;">
     <div class="container visit-grid">
 
-      <!-- BOOKING FORM -->
+
+       
       <div class="form-card reveal">
         <h2 class="section-title" style="font-size:1.8rem; margin-bottom:1.8rem;">Booking request</h2>
         <div class="field-row">
@@ -1009,7 +1072,9 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
         <div class="form-msg" id="formMsg"><span>✦</span><span>Thank you — your request is in. We'll confirm by email within one working day.</span></div>
       </div>
 
-      <!-- INFO -->
+
+
+       
       <div class="reveal d1">
         <div class="info-block">
           <h3><span class="dot"></span>Opening hours</h3>
@@ -1034,9 +1099,12 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   </div>
 </section>
 
+
+
+
+   
 </main>
 
-<!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="container">
     <div class="foot-grid">
@@ -1085,10 +1153,10 @@ footer{ background:var(--ink-2); border-top:1px solid var(--ink-3); padding:clam
   </div>
 </footer>
 
+
+   
 <script>
-/* ============================================================
-   FLOWING HAIR — generate SVG strands into any .hair-field
-   ============================================================ */
+
 function buildHair(el, count, w, h, hueStops){
   if(!el) return;
   const ns="http://www.w3.org/2000/svg";
@@ -1097,7 +1165,6 @@ function buildHair(el, count, w, h, hueStops){
   svg.setAttribute("preserveAspectRatio","xMidYMid slice");
   svg.setAttribute("width","100%");
 
-  // gradient defs
   const defs=document.createElementNS(ns,"defs");
   const grad=document.createElementNS(ns,"linearGradient");
   const gid="g"+Math.random().toString(36).slice(2,7);
@@ -1111,7 +1178,6 @@ function buildHair(el, count, w, h, hueStops){
   });
   defs.appendChild(grad); svg.appendChild(defs);
 
-  // strands: smooth vertical bezier curves swaying gently
   for(let i=0;i<count;i++){
     const x=(w/(count-1))*i + (Math.random()*40-20);
     const amp=30+Math.random()*70;
@@ -1130,13 +1196,15 @@ function buildHair(el, count, w, h, hueStops){
   }
   el.appendChild(svg);
 
-  // shine band
   const shine=document.createElement("div");
   shine.className="shine";
   shine.style.animationDelay=(Math.random()*-4)+"s";
   el.appendChild(shine);
 }
 
+
+
+   
 const goldStops=[["0","#3a2a1f"],["0.5","#D8B98C"],["0.75","#F3DEAE"],["1","#2a1f17"]];
 const roseStops=[["0","#3a2128"],["0.5","#C98B83"],["0.8","#F3DEAE"],["1","#241318"]];
 
@@ -1148,9 +1216,6 @@ buildHair(document.getElementById("lookHair"), 18, 1400, 600, roseStops);
 buildHair(document.getElementById("atelierHair"), 18, 1400, 600, goldStops);
 buildHair(document.getElementById("visitHair"), 18, 1400, 600, roseStops);
 
-/* ============================================================
-   COLOURWAY SVG for media blocks / avatars / looks
-   ============================================================ */
 const COLOURWAYS={
   espresso:["#3a2a1f","#1a110c","#5a4030"],
   rose:    ["#caa0a0","#7a4b50","#e3bfb6"],
@@ -1182,7 +1247,10 @@ function colourwaySVG(key){
     ${strands}
   </svg>`;
 }
-/* ---- real photography w/ graceful SVG fallback ---- */
+
+
+
+   
 function unsplash(id,w){ return `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||900}&q=80`; }
 function addImage(container,id,w){
   if(!container||!id) return;
@@ -1190,25 +1258,26 @@ function addImage(container,id,w){
   img.className="media-img"; img.alt=""; img.decoding="async"; img.loading="lazy";
   img.referrerPolicy="no-referrer";
   img.onload=()=>img.classList.add("loaded");
-  img.onerror=()=>img.remove();           // failure → SVG colourway shows through
+  img.onerror=()=>img.remove();
   img.src=unsplash(id,w);
   container.appendChild(img);
   const tint=document.createElement("div"); tint.className="media-tint";
   container.appendChild(tint);
 }
-// paint all data-look elements, then layer a photo if one is specified
+
 document.querySelectorAll("[data-look]").forEach(el=>{
   el.insertAdjacentHTML("afterbegin", colourwaySVG(el.dataset.look));
   if(el.dataset.img) addImage(el, el.dataset.img, el.dataset.w);
 });
-// hero portrait carries its own photo (not a data-look element)
+
 document.querySelectorAll(".hero-portrait[data-img]").forEach(el=>{
   addImage(el, el.dataset.img, el.dataset.w);
 });
 
-/* ============================================================
-   LOOKBOOK data + render
-   ============================================================ */
+
+
+
+   
 const LOOKS=[
   {name:"Sun-Grown Balayage", stylist:"Sofia Renaud", cat:"colour", look:"honey", tall:true, img:"1605497788044-5a32c7078486"},
   {name:"The French Bob", stylist:"Marcus Kane", cat:"cuts", look:"espresso", img:"1521590832167-7bcbfaa6381f"},
@@ -1226,7 +1295,7 @@ grid.innerHTML=LOOKS.map(l=>`
     <span class="lk-cat">${l.cat}</span>
     <div class="lk-info"><h3>${l.name}</h3><span>by ${l.stylist}</span></div>
   </article>`).join("");
-// paint colourway + photo into each look card (behind the caption)
+
 grid.querySelectorAll(".look").forEach(el=>{
   el.insertAdjacentHTML("afterbegin", colourwaySVG(el.dataset.look));
   if(el.dataset.img) addImage(el, el.dataset.img, el.dataset.w);
@@ -1242,9 +1311,6 @@ document.getElementById("lookFilters").addEventListener("click",e=>{
   });
 });
 
-/* ============================================================
-   ROUTER — multi-page navigation
-   ============================================================ */
 const pages=document.querySelectorAll(".page");
 const navAnchors=document.querySelectorAll("[data-nav]");
 function go(name){
@@ -1252,16 +1318,13 @@ function go(name){
   document.querySelectorAll(".nav-links a").forEach(a=>a.classList.toggle("active", a.dataset.nav===name));
   window.scrollTo({top:0, behavior:"auto"});
   closeMenu();
-  // re-arm reveals on the now-active page
+
   requestAnimationFrame(armReveals);
 }
 navAnchors.forEach(a=>{
   a.addEventListener("click",e=>{ e.preventDefault(); go(a.dataset.nav); });
 });
 
-/* ============================================================
-   MOBILE MENU
-   ============================================================ */
 const burger=document.getElementById("hamburger");
 const navLinks=document.getElementById("navLinks");
 function closeMenu(){ navLinks.classList.remove("open"); burger.classList.remove("open"); burger.setAttribute("aria-expanded","false"); }
@@ -1271,17 +1334,11 @@ burger.addEventListener("click",()=>{
   burger.setAttribute("aria-expanded",open);
 });
 
-/* ============================================================
-   HEADER scroll state
-   ============================================================ */
 const header=document.getElementById("header");
 window.addEventListener("scroll",()=>{
   header.classList.toggle("scrolled", window.scrollY>40);
 },{passive:true});
 
-/* ============================================================
-   SCROLL REVEAL
-   ============================================================ */
 let io;
 function armReveals(){
   if(io) io.disconnect();
@@ -1294,9 +1351,6 @@ function armReveals(){
 }
 armReveals();
 
-/* ============================================================
-   TESTIMONIAL rotator
-   ============================================================ */
 const QUOTES=[
   {t:"I walked in unsure and walked out feeling like the most polished version of myself. The colour has grown out flawlessly — three months on and it still looks intentional.", c:"Amara O.", r:"colour & cut client"},
   {t:"The consultation alone was worth it. They actually listened, talked me out of a cut that wouldn't have suited me, and gave me something far better.", c:"Daniel M.", r:"restyle client"},
@@ -1328,9 +1382,6 @@ let qTimer;
 function resetQuoteTimer(){ clearInterval(qTimer); qTimer=setInterval(()=>{ qi=(qi+1)%QUOTES.length; renderQuote(); },6500); }
 resetQuoteTimer();
 
-/* ============================================================
-   BOOKING form (no real backend — validate + confirm)
-   ============================================================ */
 document.getElementById("submitBtn").addEventListener("click",()=>{
   const fn=document.getElementById("fname").value.trim();
   const em=document.getElementById("email").value.trim();
@@ -1354,7 +1405,6 @@ document.getElementById("submitBtn").addEventListener("click",()=>{
   document.getElementById("submitBtn").querySelector("span").textContent="Request sent ✓";
 });
 
-/* newsletter */
 document.getElementById("newsBtn").addEventListener("click",()=>{
   const e=document.getElementById("newsEmail");
   const m=document.getElementById("newsMsg");
