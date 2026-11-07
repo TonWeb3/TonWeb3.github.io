@@ -3,46 +3,87 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cosmos - Privacy Policy</title>
+<title>Privacy Policy - Cosmos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:720px;margin:0 auto;padding:32px 16px;line-height:1.6;color:#1a1a1a}
-  h1{margin-bottom:4px} h2{margin-top:28px} a{color:#0b5fff} .muted{color:#666}
+  :root{--bg:#07061a;--card:rgba(255,255,255,.05);--border:rgba(255,255,255,.10);--text:#ecebff;--muted:#a3a1c7;--a:#7c5cff;--b:#25d9ff;--c:#ff4f9a}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--text);line-height:1.75;background:
+    radial-gradient(900px 500px at 15% -10%,rgba(124,92,255,.35),transparent 60%),
+    radial-gradient(800px 500px at 100% 10%,rgba(37,217,255,.18),transparent 60%),var(--bg);
+    min-height:100vh;display:flex;flex-direction:column}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.45;background-image:
+    radial-gradient(1.2px 1.2px at 12% 18%,#fff,transparent),radial-gradient(1px 1px at 70% 12%,#fff,transparent),
+    radial-gradient(1.5px 1.5px at 85% 40%,#cfe,transparent),radial-gradient(1px 1px at 30% 60%,#fff,transparent),
+    radial-gradient(1.2px 1.2px at 55% 80%,#fff,transparent),radial-gradient(1px 1px at 92% 85%,#fff,transparent)}
+  a{color:var(--b);text-decoration:none}a:hover{text-decoration:underline}
+  .wrap{position:relative;max-width:780px;margin:0 auto;padding:28px 20px 60px;width:100%;flex:1}
+  nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--text)}
+  .brand:hover{text-decoration:none}
+  .logo{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;box-shadow:0 6px 24px rgba(124,92,255,.5);font-size:18px}
+  nav .links{display:flex;gap:18px;font-size:14px}
+  nav .links a{color:var(--muted)}nav .links a:hover,nav .links a.on{color:var(--text);text-decoration:none}
+  h1{font-size:clamp(32px,6vw,46px);margin:0 0 6px;font-weight:800;letter-spacing:-.02em;
+    background:linear-gradient(90deg,#fff,#cfc7ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .updated{color:var(--muted);font-size:14px;margin-bottom:28px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px 24px;margin-bottom:14px;backdrop-filter:blur(8px)}
+  .card h2{margin:0 0 8px;font-size:18px;display:flex;align-items:center;gap:10px}
+  .card h2 span{flex:none;width:28px;height:28px;border-radius:8px;display:grid;place-items:center;font-size:13px;font-weight:700;background:linear-gradient(135deg,var(--a),var(--b))}
+  .card p,.card li{color:#cfcdee;font-size:15.5px;margin:0}
+  .card p+p{margin-top:8px}
+  .card ul{margin:8px 0 0;padding-left:20px}
+  .card li{margin-bottom:6px}
+  footer{position:relative;text-align:center;color:var(--muted);font-size:13px;padding:24px 20px 34px;border-top:1px solid var(--border)}
+  footer a{color:var(--muted);margin:0 8px}
 </style>
 </head>
 <body>
-  <p><a href="index.html">&larr; Cosmos</a></p>
-  <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: November 7, 2026</p>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="index.html"><span class="logo">&#10022;</span> Cosmos</a>
+      <div class="links"><a href="terms.html">Terms</a><a class="on" href="privacy.html">Privacy</a></div>
+    </nav>
 
-  <h2>1. Overview</h2>
-  <p>Cosmos ("the App") publishes videos to a creator's own TikTok account. This policy explains what information the App handles and why.</p>
+    <h1>Privacy Policy</h1>
+    <div class="updated">Last updated: November 7, 2026</div>
 
-  <h2>2. Information we handle</h2>
-  <ul>
-    <li><strong>TikTok account information:</strong> when you log in with TikTok, we receive an access token and refresh token, and basic profile information (such as your display name and avatar) permitted by the scopes you approve.</li>
-    <li><strong>Videos and post details:</strong> the video file, title, and privacy settings you choose to publish.</li>
-  </ul>
-  <p>We do not collect your TikTok password. Login happens on TikTok's own page.</p>
+    <div class="card"><h2><span>1</span>Overview</h2>
+      <p>Cosmos ("the App") publishes videos to a creator's own TikTok account. This policy explains what information the App handles and why.</p></div>
 
-  <h2>3. How we use it</h2>
-  <p>We use this information only to authenticate you with TikTok and to publish the content you select to your TikTok account. We do not use it for advertising or profiling.</p>
+    <div class="card"><h2><span>2</span>Information we handle</h2>
+      <ul>
+        <li><strong>TikTok account information:</strong> when you log in with TikTok, we receive an access token and refresh token, and basic profile information (such as your display name and avatar) permitted by the scopes you approve.</li>
+        <li><strong>Videos and post details:</strong> the video file, title, and privacy settings you choose to publish.</li>
+      </ul>
+      <p style="margin-top:10px">We do not collect your TikTok password. Login happens on TikTok's own page.</p></div>
 
-  <h2>4. Sharing</h2>
-  <p>We do not sell, rent, or share your information with third parties. Your videos and post details are sent only to TikTok, at your request, through TikTok's official Content Posting API.</p>
+    <div class="card"><h2><span>3</span>How we use it</h2>
+      <p>We use this information only to authenticate you with TikTok and to publish the content you select to your TikTok account. We do not use it for advertising or profiling.</p></div>
 
-  <h2>5. Storage and retention</h2>
-  <p>Access tokens are stored securely and only for as long as you keep the App connected. Video files are used only to complete the upload and are not kept afterwards. You can request deletion of any stored data at any time.</p>
+    <div class="card"><h2><span>4</span>Sharing</h2>
+      <p>We do not sell, rent, or share your information with third parties. Your videos and post details are sent only to TikTok, at your request, through TikTok's official Content Posting API.</p></div>
 
-  <h2>6. Your choices</h2>
-  <p>You can disconnect the App at any time in TikTok under Settings and privacy, then Security and permissions, then Manage app permissions. Disconnecting revokes our access. To request deletion of data we hold, contact us below.</p>
+    <div class="card"><h2><span>5</span>Storage and retention</h2>
+      <p>Access tokens are stored securely and only for as long as you keep the App connected. Video files are used only to complete the upload and are not kept afterwards. You can request deletion of any stored data at any time.</p></div>
 
-  <h2>7. Children</h2>
-  <p>The App is not intended for anyone under 13, and we do not knowingly collect information from children.</p>
+    <div class="card"><h2><span>6</span>Your choices</h2>
+      <p>You can disconnect the App at any time in TikTok under Settings and privacy, then Security and permissions, then Manage app permissions. Disconnecting revokes our access. To request deletion of data we hold, contact us below.</p></div>
 
-  <h2>8. Changes</h2>
-  <p>We may update this policy and will change the date above when we do.</p>
+    <div class="card"><h2><span>7</span>Children</h2>
+      <p>The App is not intended for anyone under 13, and we do not knowingly collect information from children.</p></div>
 
-  <h2>9. Contact</h2>
-  <p>Privacy questions or deletion requests: dudecosmo@gmail.com</p>
+    <div class="card"><h2><span>8</span>Changes</h2>
+      <p>We may update this policy and will change the date above when we do.</p></div>
+
+    <div class="card"><h2><span>9</span>Contact</h2>
+      <p>Privacy questions or deletion requests: <a href="mailto:dudecosmo@gmail.com">dudecosmo@gmail.com</a></p></div>
+  </div>
+  <footer>
+    <a href="terms.html">Terms of Service</a>&middot;<a href="privacy.html">Privacy Policy</a>&middot;<a href="mailto:dudecosmo@gmail.com">dudecosmo@gmail.com</a>
+    <div style="margin-top:8px">&copy; 2026 Cosmos. Not affiliated with or endorsed by TikTok.</div>
+  </footer>
 </body>
 </html>
